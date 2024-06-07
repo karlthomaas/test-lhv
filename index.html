@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="et" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="components/product-field.js" type="module"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body class="bg-white h-full w-full max-w-screen-lg">
+    <section class="py-10 w-full h-full p-4">
+        <div class="mx-auto flex flex-col space-y-10 w-max">
+            <h1 class="text-4xl text-center font-light">Sisustuslaen</h1>
+            <img title="image" src="/public/images/flipper.png" class="hover:cursor-pointer" />
+        </div>
+    </section>
+    <section class="py-10 w-full h-full bg-[#F1EDEB] px-7 flex flex-col space-y-5 justify-center">
+        <h1 class="font-light text-2xl text-center"><span class="font-semibold">Koosta soovinimekiri</span> ja vaata oma uue sisustuse kuumakset</h1>
+        <div id="products" class="flex space-x-5">
+            <input type="text" placeholder="Toode" class="input input-ghost w-full max-w-xs border-b-2 border-x-0 border-t-0 border rounded-none border-neutral-300 border-black"/>
+            <input type="number" placeholder="Hind" class="input input-ghost w-full max-w-xs border-b-2 border-x-0 border-t-0 border rounded-none border-neutral-300 border-black"/>
+        </div>
+        <div class="flex justify-between">
+            <button type="button" class="btn">
+                <i data-lucide="circle-plus"></i>
+                Lisa toode</button>
+            <button type="button" class="btn">Kustuta</button>
+        </div>
+    </section>
+</body>
+<script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</html>
+
+<style>
+    
+</style>
