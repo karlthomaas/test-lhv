@@ -7,42 +7,142 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="icon" href="favicon.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="components/product-field.js" type="module"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="scripts/product.js" type="module"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'sans': ['Helvetica Neue', 'Arial', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        neutral: "#89868D",
+                        gray: {
+                            600: "#6C6972",
+                            900: "#262633"
+                        },
+                        text: "#262633",
+                        border: "#C6C4C7"
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-white h-full w-full max-w-screen-lg">
-    <section class="py-10 w-full h-full p-4">
-        <div class="mx-auto flex flex-col space-y-10 w-max">
-            <h1 class="text-4xl text-center font-light">Sisustuslaen</h1>
-            <img title="image" src="/public/images/flipper.png" class="hover:cursor-pointer" />
+<body class="bg-white h-full w-full max-w-[942px] font-sans mx-auto">
+    <section class="pt-10 pb-12 w-full h-full p-4 lg:w-[calc(100%-81px)] ml-auto lg:p-0">
+        <div class="mx-auto flex flex-col space-y-[31px] w-max lg:w-full">
+            <h2 class="text-[28px] text-center font-light lg:hidden">Sisustuslaen</h2>
+            <div class="relative size-[294px] lg:hidden hover:cursor-pointer">
+                <img src="public/images/lounge.png" class="w-[100%]" />
+                <div class="absolute bottom-0 bg-[#8ECDD1] w-full h-[106px]">
+                    <h5 class="font-bold pl-[24px] pt-[20px] text-[18px] w-[240px] text-text">Kas sinu diivan on oma aja
+                        ära elanud?
+                    </h5>
+                    <div class="absolute bottom-0 right-0 w-[51px] h-[51px]"
+                        style="background: linear-gradient(to top left, #ffffff 50%, #3B3B47 50%);">
+                        <img src="public/icons/left-arrow.svg" class="w-[15px] h-[15px] absolute top-2 left-2" />
+                    </div>
+                </div>
+            </div>
+            <div class="hidden relative lg:block text-text">
+                <div class="w-full h-max py-[60px] pl-[294px] bg-[#8ECDD1] flex flex-col space-y-[13px]">
+                    <h5 class="font-bold text-[18px] h-[22px]">Kas sinu diivan on oma aja ära elanud?</h5>
+                    <p class="text-[16px] w-[486px] font-light tracking-wide">
+                        Oled väsinud segadusest, kus asjadel pole oma kohta. Oled unistanud lausa täiesti uuest
+                        sisekujundusest, aga kõik tundub korraga liiga kallis? LHV sisustuslaenuga saad oma unistused
+                        ellu viia juba täna.
+                    </p>
+                    <a class="h-[24px] flex items-center hover:cursor-pointer">Loe lisa <img src="public/icons/arrow-down.svg" class="inline-flex size-[16px] ml-2"></a>
+                </div>
+                <img src="public/images/lounge.png" class="absolute top-[57px] -translate-x-[81px]" />
+            </div>
         </div>
     </section>
-    <section class="py-10 w-full h-full bg-[#F1EDEB] px-7 flex flex-col space-y-5 justify-center">
-        <h1 class="font-light text-2xl text-center"><span class="font-semibold">Koosta soovinimekiri</span> ja vaata oma uue sisustuse kuumakset</h1>
-        <div id="products" class="flex space-x-5">
-            <input type="text" placeholder="Toode" class="input input-ghost w-full max-w-xs border-b-2 border-x-0 border-t-0 border rounded-none border-neutral-300 border-black"/>
-            <input type="number" placeholder="Hind" class="input input-ghost w-full max-w-xs border-b-2 border-x-0 border-t-0 border rounded-none border-neutral-300 border-black"/>
+    <section
+        class="py-[40px] w-full h- bg-[#F1EDEB] px-[24px] flex flex-col gap-[40px] justify-center rounded-[4px] text-text lg:mt-[123px] lg:px-[162px]">
+        <p class="text-[28px] lg:px-[79px] text-center font-bold">Koosta soovinimekiri <span class="font-light">ja vaata
+                oma uue sisustuse kuumakset</span>
+        </p>
+        <div class="gap-[40px] flex flex-col lg:flex-row lg:justify-between lg:space-x-8">
+            <table class="table-fixed border-separate [border-spacing:0.75rem] w-full text-neutral lg:min-w-[374px]">
+                <thead>
+                    <tr>
+                        <th class="text-left font-medium text-gray-600">TOODE</th>
+                        <th class="text-left font-medium text-gray-600">HIND</th>
+                    </tr>
+                </thead>
+                <tbody id="products" class="">
+                    <tr id="table-buttons">
+                        <td>
+                            <button id="add-product" type="button"
+                                class="btn btn-ghost mr-auto text-gray-600 px-0 font-medium">
+                                <img src="public/icons/circle_plus.svg" class="size-[20px]" alt="circle plus icon">
+                                Lisa toode
+                            </button>
+                        </td>
+                        <td class="flex justify-end">
+                            <button id="delete-product" type="button"
+                                class="btn btn-ghost text-gray-600 px-0 font-medium">
+                                <img src="public/icons/trash.svg" class="size-[20px]" alt="trash icon">
+                                Kustuta
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="flex flex-col lg:w-full">
+                <div class="text-3xl text-center font-thin text-[45px] mb-[24px]"><span id="total-price">0</span> €
+                </div>
+                <button type="button"
+                    class="btn btn-neutral mb-[16px] font-medium text-white bg-[#3B3B47] rounded-[4px]">Taotle
+                    sisustuslaenu</button>
+                <a
+                    class="text-center underline underline-offset-4 font-light text-[14px] text-gray-600 hover:cursor-pointer">Tutvu
+                    tingimustega</a>
+            </div>
         </div>
-        <div class="flex justify-between">
-            <button type="button" class="btn">
-                <i data-lucide="circle-plus"></i>
-                Lisa toode</button>
-            <button type="button" class="btn">Kustuta</button>
+    </section>
+    <section
+        class="py-12 pl-[27px] pb-[27px] pr-[28px] flex flex-col space-y-6 bg-white items-center text-xl text-text lg:flex-row lg:justify-between">
+        <div class="flex flex-col space-y-6 items-center lg:flex-row lg:space-y-0 lg:space-x-7 lg:w-1/2">
+            <img src="public/icons/support.svg" class="w-[80px]" />
+            <div class="flex flex-col">
+                <h1 class="font-light">LHV <span class="font-semibold">Klienditugi</span></h1>
+                <p class="hidden lg:block text-[16px] font-light">
+                    Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.
+                </p>
+            </div>
         </div>
+        <div class="flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:justify-evenly lg:w-1/2">
+            <h3 class="flex space-x-4">
+                <img src="public/icons/call.svg" class="size-[24px]" />
+                <p class="text-[22px] font-light">6 800 400</p>
+            </h3>
+            <h3 class="flex space-x-4">
+                <img src="public/icons/email.svg" class="size-[24px]" />
+                <p class="underline underline-offset-4 text-[22px] font-light hover:cursor-pointer">info@lhv.ee</p>
+            </h3>
+        </div>
+
+        <!-- Didn't find Helvetica Neue weight 400, so using 300 instead -->
+        <p class="text-[16px] text-center font-light lg:hidden">Kui sul tekib pangateenuse kasutamisel probleeme, saad
+            klienditoe
+            infotelefonilt abi ööpäev ringi.</p>
     </section>
 </body>
-<script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    lucide.createIcons();
-  </script>
+
 </html>
 
 <style>
-    
+
 </style>
