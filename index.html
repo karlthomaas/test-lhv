@@ -2,13 +2,13 @@
 <html lang="et" data-theme="light">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Soovinimekiri | LHV</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Koosta soovinimekiri ja vaata oma sisustuse kuumakset!">
     <link rel="icon" href="favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="components/product-field.js" type="module"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -36,18 +36,18 @@
 </head>
 
 <body class="bg-white h-full w-full max-w-[942px] font-sans mx-auto">
-    <section
+    <div
         class="mt-10 mb-12 mx-4 h-full lg:w-[calc(100%-81px)] flex flex-col space-y-[31px] w-max lg:w-full lg:space-y-0 lg:mb-0 lg:mt-[214px] mx-auto">
         <h2 class="text-[28px] text-center font-light lg:hidden">Sisustuslaen</h2>
         <div class="relative size-[294px] lg:hidden hover:cursor-pointer">
-            <img src="public/images/lounge.png" class="w-[100%]" />
+            <img src="public/images/lounge.png" class="w-[100%]" alt="ruumi-pilt">
             <div class="absolute bottom-0 bg-[#8ECDD1] w-full h-[106px]">
                 <h5 class="font-bold pl-[24px] pt-[20px] text-[18px] w-[240px] text-text">Kas sinu diivan on oma aja
                     ära elanud?
                 </h5>
                 <div class="absolute bottom-0 right-0 w-[51px] h-[51px]"
                     style="background: linear-gradient(to top left, #ffffff 50%, #3B3B47 50%);">
-                    <img src="public/icons/left-arrow.svg" class="size-[15px] absolute top-2 left-2" />
+                    <img src="public/icons/left-arrow.svg" class="size-[15px] absolute top-2 left-2" alt="noole-ikoon">
                 </div>
             </div>
         </div>
@@ -60,13 +60,13 @@
                     ellu viia juba täna.
                 </p>
                 <a id="read-more" class="h-[24px] flex items-center hover:cursor-pointer">Loe lisa
-                    <img id="read-more-icon" src="public/icons/arrow-down.svg" class="inline-flex size-[16px] ml-2">
+                    <img src="public/icons/arrow-down.svg" class="inline-flex size-[16px] ml-2" alt="noole-ikoon">
                 </a>
             </div>
-            <img src="public/images/lounge.png" class="absolute top-[57px] -translate-x-[81px]" />
+            <img src="public/images/lounge.png" class="absolute top-[57px] -translate-x-[81px]" alt="ruumi-pilt">
         </div>
-    </section>
-    <section
+    </div>
+    <div
         class="py-[40px] lg:py-[60px] w-full h- bg-[#F1EDEB] px-[24px] flex flex-col gap-[40px] justify-center rounded-[4px] text-text lg:mt-[123px] lg:px-[60px]">
         <p class="text-[28px] mx-auto lg:w-[456px] text-center font-bold">Koosta soovinimekiri <span
                 class="font-light">ja vaata
@@ -85,14 +85,14 @@
                         <td>
                             <button id="add-product" type="button"
                                 class="btn btn-ghost mr-auto text-gray-600 font-medium px-1 -ml-1">
-                                <img src="public/icons/circle_plus.svg" class="size-[20px]" alt="circle plus icon">
+                                <img src="public/icons/circle_plus.svg" class="size-[20px]" alt="lisa-ikoon">
                                 Lisa toode
                             </button>
                         </td>
                         <td class="flex justify-end">
                             <button id="delete-product" type="button"
                                 class="btn btn-ghost text-gray-600 px-1 -mr-1 font-medium">
-                                <img src="public/icons/trash.svg" class="size-[20px]" alt="trash icon">
+                                <img src="public/icons/trash.svg" class="size-[20px]" alt="prügi-ikoon">
                                 Kustuta
                             </button>
                         </td>
@@ -111,12 +111,12 @@
                     tingimustega</a>
             </div>
         </div>
-    </section>
-    <section
+    </div>
+    <div
         class="mt-12 mb-[27px] ml-[27px] lg:py-12 lg:mx-0 lg:mb-0 mr-[28px] lg:mt-[60px] flex flex-col bg-white items-center text-xl text-text lg:flex-row lg:justify-between">
         <div class="flex flex-col space-y-6 items-center lg:flex-row lg:space-y-0 lg:space-x-7 lg:w-[456px] mb-6">
-            <img src="public/icons/support.svg" class="w-[80px]" />
-            <div class="flex flex-col">
+            <img src="public/icons/support.svg" class="w-[80px]" alt="abi-ikoon">
+            <div class="flex flex-col lg:space-y-4">
                 <h1 class="font-light">LHV <span class="font-semibold">Klienditugi</span></h1>
                 <p class="hidden lg:block text-[16px] font-light">
                     Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.
@@ -124,27 +124,23 @@
             </div>
         </div>
         <div class="flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:justify-evenly lg:w-1/2 mb-12">
-            <h3 class="flex space-x-4">
-                <img src="public/icons/call.svg" class="size-[24px]" />
+            <div class="flex space-x-4">
+                <img src="public/icons/call.svg" class="size-[24px]" alt="telefoni-ikoon">
                 <a href="tel:+3726800400" class="text-[22px] font-light">6 800 400</a>
-            </h3>
-            <h3 class="flex space-x-4">
-                <img src="public/icons/email.svg" class="size-[24px]" />
-                <div class="underline underline-offset-4 text-[22px] font-light hover:cursor-pointer">
+            </div>
+            <div class="flex space-x-4">
+                <img src="public/icons/email.svg" class="size-[24px]" alt="email-ikoon">
+                <h3 class="underline underline-offset-4 text-[22px] font-light hover:cursor-pointer">
                     info@lhv.ee
-                </div>
-            </h3>
+                </h3>
+            </div>
         </div>
 
         <!-- Didn't find Helvetica Neue weight 400, so using 300 instead -->
         <p class="text-[16px] text-center font-light lg:hidden">
             Kui sul tekib pangateenuse kasutamisel probleeme, saad klienditoe infotelefonilt abi ööpäev ringi.
         </p>
-    </section>
+    </div>
 </body>
 
 </html>
-
-<style>
-
-</style>
