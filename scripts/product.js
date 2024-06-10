@@ -107,7 +107,7 @@ const createProductField = () => {
 const isNumeric = (str) => {
   if (typeof str != "string") return false;
   // Remove commas before checking if it's numeric
-  const noCommasStr = str.replace(/,/g, '.');
+  const noCommasStr = str.replace(/,/g, ".");
   return !isNaN(noCommasStr) && !isNaN(parseFloat(noCommasStr));
 };
 
